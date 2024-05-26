@@ -20,7 +20,10 @@ func options(array [size]money){
     var options int
     fmt.Println("==================================")
     fmt.Println("1. Tampilkan Data")
-    fmt.Println("2. Masukkan Data")    
+    fmt.Println("2. Masukkan Data")
+    fmt.Println("==================================")
+    fmt.Println("==================================")
+    fmt.Print("Masukkan Opsi : ")
     fmt.Scan(&options)
     switch options{
         case 1:
@@ -32,6 +35,7 @@ func options(array [size]money){
 
 func viewData(array [size]money){
     var i int
+    fmt.Println("====== Data ======")
       for i = 0;i <= size;i++ {
           id := array[i].id
           tgl := array[i].day
@@ -54,6 +58,7 @@ func insertData(array [size]money){
     for array[i].amount != 0{
         i++
     }
+    fmt.Println("==== Masukkan Data ====")
     fmt.Println("Masukkan Tanggal : ")
     fmt.Scan(&array[i].day)
     fmt.Println("Masukkan Bulan : ")
@@ -68,3 +73,5 @@ func insertData(array [size]money){
     idcount++
     options(array)
 }
+
+func editData()
