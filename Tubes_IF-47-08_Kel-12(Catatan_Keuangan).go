@@ -114,6 +114,7 @@ func sortAmount(array [size]money){
 	fmt.Println("======= Sort By Amount =======")
 	fmt.Println("1. Ascending")
 	fmt.Println("2. Descending")
+	fmt.Print("Sort berdasarkan : ")
     fmt.Scan(&sortby)
 	switch sortby{
 		case 1:
@@ -143,6 +144,7 @@ func sortDate(array [size]money){
 	fmt.Println("======= Sort By Amount =======")
 	fmt.Println("1. Oldest")
 	fmt.Println("2. Newest")
+	fmt.Print("Sort berdasarkan : ")
     fmt.Scan(&sortby)
 	switch sortby{
 		case 1:
