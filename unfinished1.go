@@ -22,6 +22,8 @@ func options(array [size]money){
     fmt.Println("1. Tampilkan Data")
     fmt.Println("2. Masukkan Data")
     fmt.Println("3. Edit Data")
+	fmt.Println("4. Sort by Amount")
+	fmt.Println("5. Sort by Date")
     fmt.Println("==================================")
     fmt.Print("Masukkan Opsi : ")
     fmt.Scan(&options)
@@ -32,6 +34,10 @@ func options(array [size]money){
             insertData(array)
         case 3:
             editData(array)
+		case 4:
+			sortAmount(array)
+		case 5:
+			sortDate(array)
     }
 }
 
@@ -80,9 +86,10 @@ func editData(array [size]money){
     fmt.Println("====== Edit Data ======")
     fmt.Print("Masukkan ID Data yang diedit : ")
     fmt.Scan(&x)
-    for i <= idcount && index == -1{
+    for i <= idcount{
         if x == array[i].id {
             index = i
+			break
         }
         i++
     }
@@ -97,4 +104,36 @@ func editData(array [size]money){
     fmt.Println("Edit Jumlah : ")
     fmt.Scan(&array[index].amount)
     options(array)
+}
+
+//Sorting menggunakan insertion sort
+func sortAmount(array [size]money){
+    var sortby, i, j, min, temp int
+	fmt.Println("======= Sort By Amount =======")
+	fmt.Println("1. Ascending")
+	fmt.Println("2. Descending")
+    fmt.Scan(&sortby)
+	switch sortby{
+		case 1:
+			//ascending
+			for i := 0; i < idcount - 1; i++ {
+				for j := i; j > 0 && array[j-1].amount > array[j].amount; j-- {
+					array[j].amount, array[j-1].amount = array[j-1].amount, array[j].amount
+				}
+			}
+			options(array)
+		case 2:
+			//descending
+			for i := 0; i < idcount - 1; i++ {
+				for j := i; j > 0 && array[j-1].amount < array[j].amount; j-- {
+					array[j].amount, array[j-1].amount = array[j-1].amount, array[j].amount
+				}
+			}
+			options(array)
+	}
+}
+
+//Sorting menggunakan Selection sort
+func sortDate(array [size]money){
+	
 }
