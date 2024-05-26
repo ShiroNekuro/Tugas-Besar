@@ -11,13 +11,16 @@ type money struct{
 }
 var idcount int = 1
 const size = 2568
-var array [size]money
 func main() {
+    var array [size]money
     options(array)
 }
 
 func options(array [size]money){
     var options int
+    fmt.Println("==================================")
+    fmt.Println("1. Tampilkan Data")
+    fmt.Println("2. Masukkan Data")    
     fmt.Scan(&options)
     switch options{
         case 1:
