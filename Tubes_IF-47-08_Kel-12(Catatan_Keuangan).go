@@ -36,8 +36,8 @@ func options(array [size]money){
             editData(array)
 		case 4:
 			sortAmount(array)
-	// 	case 5:
-	// 		sortDate(array)
+	 	case 5:
+	 		sortDate(array)
 	}
 }
 
@@ -139,7 +139,7 @@ func sortAmount(array [size]money){
 
 //Sorting menggunakan Selection sort
 func sortDate(array [size]money){
-    var sortby, i, j, minmax, temp int
+    var sortby, i, j, minmax int
 	fmt.Println("======= Sort By Amount =======")
 	fmt.Println("1. Oldest")
 	fmt.Println("2. Newest")
