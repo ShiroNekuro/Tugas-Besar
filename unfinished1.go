@@ -39,7 +39,7 @@ func viewData(array [size]money){
     var i int
     i = 0
     fmt.Println("====== Data ======")
-    for i = 0;i <= size;i++ {
+    for i <= size && array[i].id != 0{
         id := array[i].id
         tgl := array[i].day
         bln := array[i].month
@@ -54,7 +54,7 @@ func viewData(array [size]money){
 func insertData(array [size]money){
     var i int = 0
     
-    for array[i].amount != 0{
+    for array[i].id != 0{
         i++
     }
     fmt.Println("==== Masukkan Data ====")
