@@ -141,7 +141,7 @@ func sortAmount(array [size]money){
 //Sorting menggunakan Selection sort
 func sortDate(array [size]money){
     var sortby, i, j, minmax int
-	fmt.Println("======= Sort By Amount =======")
+	fmt.Println("======= Sort By Date =======")
 	fmt.Println("1. Oldest")
 	fmt.Println("2. Newest")
 	fmt.Print("Sort berdasarkan : ")
