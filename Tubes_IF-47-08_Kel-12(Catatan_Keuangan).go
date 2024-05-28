@@ -11,6 +11,7 @@ type money struct{
 }
 var idcount int = 1
 const size = 2568
+
 func main() {
     var array [size]money
     options(array)
@@ -45,7 +46,7 @@ func viewData(array [size]money){
     var i int
     i = 0
     fmt.Println("====== Data ======")
-    for i <= idcount - 1{
+    for i < idcount - 1{
         id := array[i].id
         tgl := array[i].day
         bln := array[i].month
@@ -114,7 +115,6 @@ func sortAmount(array [size]money){
 	fmt.Println("======= Sort By Amount =======")
 	fmt.Println("1. Ascending")
 	fmt.Println("2. Descending")
-	fmt.Print("Sort berdasarkan : ")
     fmt.Scan(&sortby)
 	switch sortby{
 		case 1:
@@ -144,7 +144,6 @@ func sortDate(array [size]money){
 	fmt.Println("======= Sort By Date =======")
 	fmt.Println("1. Oldest")
 	fmt.Println("2. Newest")
-	fmt.Print("Sort berdasarkan : ")
     fmt.Scan(&sortby)
 	switch sortby{
 		case 1:
@@ -166,6 +165,7 @@ func sortDate(array [size]money){
 				}
 			array[i], array[minmax] = array[minmax], array[i]
 			}
+			options(array)
 
 		case 2:
 		//Descending
@@ -186,5 +186,6 @@ func sortDate(array [size]money){
 				}
 			array[i], array[minmax] = array[minmax], array[i]
 			}
+			options(array)
 		}
 }
